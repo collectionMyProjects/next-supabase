@@ -17,7 +17,7 @@
         "calles": ["cva", "cn"]
       }
     ],
-    "tailwindcss/enforcess-shothand": [ // 가능하다면 여러 클래스 이름을 약칭으로 병합한다.
+    "tailwindcss/enforces-shorthand": [ // 가능하다면 여러 클래스 이름을 약칭으로 병합한다.
       "warn",
       {
         "calles": ["cva", "cn"]
