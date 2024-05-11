@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Footer from './components/Footer';
+import Header from './components/Header';
 import './globals.css';
-import { createClient } from '@supabase/supabase-js';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +18,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="flex h-screen w-screen">
+          <div className="flex flex-1 flex-col">
+            <Header />
+            <div className="flex flex-1 flex-col overflow-y-auto">
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
