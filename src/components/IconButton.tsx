@@ -2,13 +2,12 @@ import { cn } from '@/utils/style';
 import { ComponentPropsWithRef, ElementType } from 'react';
 import { IconType } from 'react-icons/lib';
 
-type IconButtonProps<Component extends ElementType> =
-  ComponentPropsWithRef<Component> & {
-    Icon: IconType;
-    iconClassName?: string;
-    className?: string;
-    component?: Component;
-  };
+type IconButtonProps<Component extends ElementType> = {
+  Icon: IconType;
+  iconClassName?: string;
+  className?: string;
+  component?: Component;
+} & ComponentPropsWithRef<Component>;
 
 const IconButton = <Component extends ElementType = 'button'>({
   component: Component = 'button',
