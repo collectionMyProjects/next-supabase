@@ -5,6 +5,7 @@ import { cn } from '@/utils/style';
 import { useAtom } from 'jotai';
 import Link from 'next/link';
 import { AiFillGithub, AiFillInstagram, AiOutlineClose } from 'react-icons/ai';
+import IconButton from './IconButton';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useAtom(isSidebarOpen);
@@ -17,8 +18,9 @@ const Sidebar = () => {
       )}
     >
       <div className="flex justify-end lg:hidden">
-        <AiOutlineClose
-          className="size-6 cursor-pointer"
+        <IconButton
+          Icon={AiOutlineClose}
+          iconClassName="size-6 cursor-pointer"
           onClick={() => setIsOpen(false)}
         />
       </div>
@@ -38,12 +40,18 @@ const Sidebar = () => {
         Web Development
       </Link>
       <div className="mt-10 flex items-center gap-4">
-        <Link href="https://www.instagram.com/lsj0202_" target="_blank">
-          <AiFillInstagram className="size-6" />
-        </Link>
-        <Link href="https://github.com/lsj0202" target="_blank">
-          <AiFillGithub className="size-6" />
-        </Link>
+        <IconButton
+          Icon={AiFillInstagram}
+          component={Link}
+          href="https://www.instagram.com/lsj0202_"
+          target="_blank"
+        />
+        <IconButton
+          Icon={AiFillGithub}
+          component={Link}
+          href="https://github.com/lsj0202"
+          target="_blank"
+        />
       </div>
     </div>
   );
