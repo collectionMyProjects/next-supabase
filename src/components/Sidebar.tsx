@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
     <div
       className={cn(
-        'absolute z-10 min-h-screen flex-col gap-6 border-r bg-white p-10 text-base lg:relative',
+        'absolute z-10 min-h-screen flex flex-col gap-6 border-r bg-white p-10 text-base lg:relative',
         isOpen ? 'flex' : 'hidden',
       )}
     >
