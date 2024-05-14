@@ -23,7 +23,7 @@ const Footer = () => {
         <IconButton
           Icon={BsPencilSquare}
           component={Link}
-          href="/admin"
+          href="/write"
           iconClassName="text-gray-500 hover:text-gray-600"
         />
       </div>
