@@ -8,6 +8,7 @@ export const getCategories = cache(async () => {
       ? createServerClient()
       : createBrowserClient();
   const { data } = await supabase.from('Post').select('category');
+
   return Array.from(new Set(data?.map((d) => d.category))) as string[];
 });
 
@@ -17,6 +18,7 @@ export const getTags = cache(async () => {
       ? createServerClient()
       : createBrowserClient();
   const { data } = await supabase.from('Post').select('tags');
+
   return Array.from(
     new Set(data?.flatMap((d) => JSON.parse(d.tags))),
   ) as string[];
